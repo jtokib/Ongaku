@@ -13,7 +13,9 @@ import java.util.ArrayList;
 
 public class SongAdapter extends ArrayAdapter<Song> {
 
-    public SongAdapter(Activity context, ArrayList<Song> artists) { super(context,0, artists);}
+    SongAdapter(Activity context, ArrayList<Song> artists) {
+        super(context, 0, artists);
+    }
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -24,7 +26,7 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
         Song currentArtist = getItem(position);
 
-        TextView albumTextView = (TextView) gridItemView.findViewById(R.id.song_title);
+        TextView albumTextView = gridItemView.findViewById(R.id.song_title);
         albumTextView.setText(currentArtist.getSongTitle());
 
         return gridItemView;

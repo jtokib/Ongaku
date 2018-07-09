@@ -8,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class AlbumActivity extends AppCompatActivity {
 
@@ -26,7 +25,7 @@ public class AlbumActivity extends AppCompatActivity {
         albums.add(new Album("Album 6", R.drawable.img_6));
 
         AlbumAdapter adapter = new AlbumAdapter(this, albums);
-        GridView gridView = (GridView) findViewById(R.id.album_grid);
+        GridView gridView = findViewById(R.id.album_grid);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -36,16 +35,6 @@ public class AlbumActivity extends AppCompatActivity {
                 startActivity(songIntent);
             }
         });
-
-////      Set a click listener on the grid element
-//        gridView.setOnClickListener(new View.OnClickListener() {
-//            // The code in this method will be executed when the numbers View is clicked on.
-//            @Override
-//            public void onClick(View view) {
-//                Intent artistIntent = new Intent(AlbumActivity.this, SongActivity.class);
-//                startActivity(artistIntent);
-//            }
-//        });
 
     }
 }
